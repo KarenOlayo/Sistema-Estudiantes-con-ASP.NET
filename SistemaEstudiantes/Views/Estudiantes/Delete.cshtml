@@ -1,0 +1,46 @@
+﻿@model SistemaEstudiantes.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Eliminar Estudiante";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h4><i class="bi bi-trash"></i> Eliminar Estudiante</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        ⚠️ ¿Está seguro que desea eliminar este estudiante?
+                    </div>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">Nombre:</dt>
+                        <dd class="col-sm-8">@Model.Nombre @Model.Apellido</dd>
+
+                        <dt class="col-sm-4">Correo:</dt>
+                        <dd class="col-sm-8">@Model.Correo</dd>
+
+                        <dt class="col-sm-4">Programa:</dt>
+                        <dd class="col-sm-8">@Model.Programa</dd>
+
+                        <dt class="col-sm-4">Semestre:</dt>
+                        <dd class="col-sm-8">@Model.Semestre</dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Sí, Eliminar
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
